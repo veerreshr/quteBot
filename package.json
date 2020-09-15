@@ -1,0 +1,31 @@
+{
+  "name": "qutebot",
+  "version": "1.0.0",
+  "description": "Bot action to fire qute bot with inspirational messages daily",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veerreshr/quteBot.git"
+  },
+  "keywords": [
+    "quote",
+    "bot",
+    "qutebot",
+    "github",
+    "action"
+  ],
+  "author": "Veeresh Raavipaati",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/veerreshr/quteBot/issues"
+  },
+  "homepage": "https://github.com/veerreshr/quteBot#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "node-telegram-bot-api": "^0.50.0"
+  }
+}

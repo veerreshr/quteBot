@@ -1,12 +1,12 @@
-// process.env.NTBA_FIX_319 = 1;
+process.env.NTBA_FIX_319 = 1;
 require("dotenv").config();
 const axios = require("axios");
 const token = process.env.TELEGRAM_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
 
-const Telegram = require(token);
+const Telegram = require("node-telegram-bot-api");
 
-const bot = new Telegram("1272165718:AAE44Ak4EKkztXBxg1o541I-YimRxZiXlq8");
+const bot = new Telegram(token);
 
 async function getQuote() {
   try {

@@ -1,3 +1,4 @@
+process.env.NTBA_FIX_319 = 1;
 require("dotenv").config();
 const axios = require("axios");
 const Telegram = require("node-telegram-bot-api");

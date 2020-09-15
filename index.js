@@ -1,28 +1,27 @@
 process.env.NTBA_FIX_319 = 1;
 require("dotenv").config();
 const axios = require("axios");
-const Telegram = require("node-telegram-bot-api");
+const token = process.env.TELEGRAM_TOKEN;
+const chatId = process.env.TELEGRAM_CHAT_ID;
 
-const bot = new Telegram(process.env.TELEGRAM_TOKEN);
+const Telegram = require(token);
+
+const bot = new Telegram("1272165718:AAE44Ak4EKkztXBxg1o541I-YimRxZiXlq8");
 
 async function getQuote() {
   try {
     const response = await axios.get("https://type.fit/api/quotes");
-    const quote = response[Math.floor(Math.random() * response.length)];
-    // return `${quote.text} \n ${quote.author}`;
-    console.log(quote);
+    const quote =
+      response.data[Math.floor(Math.random() * response.data.length)];
+    return `${quote.text} \n\n -${quote.author}`;
   } catch (error) {
     console.error(error);
   }
 }
 
 async function sendMessage() {
-  try {
-    const message = await getQuote();
-    // bot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
-  } catch (error) {
-    console.error(error);
-  }
+  const message = await getQuote();
+  bot.sendMessage(chatId, message);
 }
 
 sendMessage();

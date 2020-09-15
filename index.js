@@ -8,7 +8,8 @@ async function getQuote() {
   try {
     const response = await axios.get("https://type.fit/api/quotes");
     const quote = response[Math.floor(Math.random() * response.length)];
-    return `${quote.text} \n ${quote.author}`;
+    // return `${quote.text} \n ${quote.author}`;
+    console.log(quote);
   } catch (error) {
     console.error(error);
   }
@@ -17,7 +18,7 @@ async function getQuote() {
 async function sendMessage() {
   try {
     const message = await getQuote();
-    bot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
+    // bot.sendMessage(process.env.TELEGRAM_CHAT_ID, message);
   } catch (error) {
     console.error(error);
   }
